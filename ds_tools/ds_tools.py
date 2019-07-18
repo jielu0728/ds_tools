@@ -14,6 +14,7 @@ class CategoricalTransformer:
 
     def fit(self, l):
         value_counts = Counter(l)
+        del value_counts[np.nan]
         high_freq = []
         low_freq = []
         for v, c in value_counts.items():
